@@ -83,7 +83,6 @@ function Add() {
 
     return (
         <div style={{ backgroundColor: '#FFF9DE' }}>
-            <Link to='/menu' style={{textDecoration:'none',color:'#ff0000'}} className='fs-4 fw-bold m-5'><i class="fa-solid fa-angles-left"></i> Back to Menu</Link>
             <Row className='py-5 d-flex'>
                 <Col md={6} sm={12} className='py-4 d-flex justify-content-center align-items-center'>
                     <img src={itemData.iImage ? itemData.iImage : "./food.png"} alt=".." width='60%' height='65%' className='img-fluid' style={{ maxWidth: '100%', height: 'auto' }} />
@@ -125,7 +124,7 @@ function Add() {
                             </FloatingLabel>
 
                             <Container className='d-flex justify-content-center pt-3' style={{ gap: '30px' }}>
-                                {!editMode && <Button variant="outline-danger px-5" onClick={clearData}>Clear</Button>}
+                                <Link to='/menu' style={{textDecoration:'none',color:'#ff0000'}}><Button variant="outline-danger px-5">Cancel</Button></Link>
                                 <Button variant="outline-success px-5" onClick={editMode ? updateData : addData}>{editMode ? "Update Item" : "Add Item"}</Button>
                             </Container>
                         </Form>
